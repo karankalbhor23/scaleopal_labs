@@ -13,8 +13,8 @@ export const siteConfig = {
 
 export const navLinks = [
     { label: "Summer Camp", href: "/summer-camp" },
-    { label: "For Schools", href: "#schools" },
-    { label: "About", href: "#about" }
+    { label: "For Schools", href: "/schools" },
+    { label: "About", href: "/about" }
 ];
 
 export const socialProof = {

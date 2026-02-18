@@ -22,12 +22,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "weekly",
             priority: 0.8,
         },
-        // Add other relevant pages like /about, /contact if they exist
-        // {
-        //   url: `${baseUrl}/about`,
-        //   lastModified: new Date(),
-        //   changeFrequency: "monthly",
-        //   priority: 0.5,
-        // },
+        {
+            url: `${baseUrl}/schools`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/about`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
     ];
 }

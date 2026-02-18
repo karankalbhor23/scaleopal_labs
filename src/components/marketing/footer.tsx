@@ -60,12 +60,12 @@ export function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#schools" className="hover:text-sky-600 transition-colors">
+                                <Link href="/schools" className="hover:text-sky-600 transition-colors">
                                     School Partnerships
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#about" className="hover:text-sky-600 transition-colors">
+                                <Link href="/about" className="hover:text-sky-600 transition-colors">
                                     About Us
                                 </Link>
                             </li>

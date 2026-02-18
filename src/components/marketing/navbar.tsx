@@ -36,7 +36,7 @@ export function Navbar() {
                     {/* Desktop CTAs */}
                     <div className="hidden items-center gap-3 md:flex">
                         <Button variant="ghost" size="sm" asChild>
-                            <Link href="#schools">Partner with Us</Link>
+                            <Link href="/schools">Partner with Us</Link>
                         </Button>
                         <Button
                             size="sm"
@@ -85,7 +85,7 @@ export function Navbar() {
                                     asChild
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    <Link href="#schools">Partner with Us</Link>
+                                    <Link href="/schools">Partner with Us</Link>
                                 </Button>
                                 <Button
                                     className="bg-sky-500 text-white hover:bg-sky-600"
