@@ -88,36 +88,7 @@ const organizationSchema = {
   },
 };
 
-const eventSchema = {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  name: "Scaleopal Labs Summer Camp 2026",
-  description:
-    "10-day hands-on AI & Robotics bootcamp for students of Class 8-12",
-  startDate: "2026-04-15",
-  endDate: "2026-04-25",
-  location: {
-    "@type": "Place",
-    name: "Scaleopal Labs",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Pune",
-      addressCountry: "IN",
-    },
-  },
-  offers: {
-    "@type": "Offer",
-    price: "3999",
-    priceCurrency: "INR",
-    availability: "https://schema.org/LimitedAvailability",
-    validFrom: "2026-02-01",
-  },
-  organizer: {
-    "@type": "Organization",
-    name: "Scaleopal Labs",
-    url: "https://labs.scaleopal.com",
-  },
-};
+
 
 export default function RootLayout({
   children,
@@ -133,12 +104,7 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(eventSchema),
-          }}
-        />
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
