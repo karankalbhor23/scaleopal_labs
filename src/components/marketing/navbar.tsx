@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { navLinks, siteConfig } from "@/lib/data";
-import { Logo, Wordmark } from "@/components/ui/logo";
+import { Logo } from "@/components/ui/logo";
 
 export function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,9 +15,8 @@ export function Navbar() {
         <header className="fixed top-0 left-0 right-0 z-50">
             <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mt-4 flex h-16 items-center justify-between rounded-2xl border border-slate-100 bg-white/80 px-6 shadow-xl shadow-slate-200/50 backdrop-blur-xl">
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <Logo size={40} className="transition-transform group-hover:scale-110 duration-300" />
-                        <Wordmark className="hidden sm:flex" />
+                    <Link href="/" className="flex items-center group -ml-10">
+                        <Logo height={80} width={320} />
                     </Link>
 
                     {/* Desktop Navigation */}

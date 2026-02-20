@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Linkedin, Instagram, Youtube } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { siteConfig, footer } from "@/lib/data";
-import { Logo, Wordmark } from "@/components/ui/logo";
+import { Logo } from "@/components/ui/logo";
 
 const socialIcons: Record<string, React.ReactNode> = {
     LinkedIn: <Linkedin className="h-5 w-5" />,
@@ -19,16 +19,13 @@ export function Footer() {
                 <div className="grid gap-12 lg:grid-cols-4">
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
-                        <div className="flex items-center gap-3">
-                            <Logo size={48} className="drop-shadow-sm" />
-                            <div>
-                                <span className="block text-xl font-bold tracking-tight text-slate-900 leading-none">
-                                    Scaleopal <span className="text-sky-600">Labs</span>
-                                </span>
-                                <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.2em] text-sky-600">
-                                    A Scaleopal Initiative
-                                </span>
-                            </div>
+                        <div className="flex flex-col items-start gap-2 text-left">
+                            <Link href="/" className="-ml-12">
+                                <Logo height={90} width={360} className="drop-shadow-sm" />
+                            </Link>
+                            <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.2em] text-sky-600">
+                                A Scaleopal Initiative
+                            </span>
                         </div>
                         <p className="mt-6 max-w-md text-sm leading-relaxed font-medium text-slate-500">
                             {footer.tagline}
