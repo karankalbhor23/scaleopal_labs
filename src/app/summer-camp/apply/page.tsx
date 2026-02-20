@@ -3,17 +3,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
     CheckCircle2,
     ArrowRight,
     Users2,
     Lightbulb,
     Cpu,
-    Sparkles,
     Loader2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 // Reusing images from the main page for consistency
 const IMG_APPLY = "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop";
 
@@ -51,12 +50,11 @@ export default function ApplyPage() {
         // Simulate API call
         await new Promise(resolve => setTimeout(resolve, 2000));
         setIsSubmitting(false);
-        alert("Application submitted! (This is a demo)");
+        // In a real app, you would redirect to a success page or show a toast
+        alert("Application submitted successfully! Our team will connect with you shortly for the next steps.");
     };
 
     const currentTrack = tracks.find(t => t.id === selectedTrack) || tracks[0];
-    const discount = referralCode ? 100 : 0;
-    const finalPrice = currentTrack.price - discount;
 
     return (
         <div className="min-h-screen bg-slate-50 font-sans flex flex-col">
@@ -64,7 +62,7 @@ export default function ApplyPage() {
             <div className="flex-1 container mx-auto px-4 py-8 pt-24 lg:py-12 lg:pt-28">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-6xl mx-auto">
 
-                    {/* Left Column: Summary & Value (Hidden on mobile? No, maybe collapsed or order-2) */}
+                    {/* Left Column: Summary & Value */}
                     <div className="w-full lg:w-5/12 order-2 lg:order-1 h-fit sticky top-24">
                         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
                             {/* Hero Image in Summary */}
@@ -104,22 +102,12 @@ export default function ApplyPage() {
 
                                 <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
                                     <div className="flex justify-between items-center mb-2">
-                                        <span className="text-slate-600 text-sm">Camp Fee</span>
-                                        <span className="font-semibold text-slate-900">₹{currentTrack.price.toLocaleString()}</span>
+                                        <span className="text-slate-600 text-sm">Selected Track</span>
+                                        <span className="font-semibold text-slate-900">{currentTrack.title}</span>
                                     </div>
-                                    {referralCode && (
-                                        <div className="flex justify-between items-center mb-2 text-emerald-600">
-                                            <span className="text-sm flex items-center gap-1">
-                                                <Users2 className="h-3 w-3" /> Referral Discount
-                                            </span>
-                                            <span className="font-semibold">- ₹100</span>
-                                        </div>
-                                    )}
-                                    <div className="border-t border-slate-200 my-2 pt-2 flex justify-between items-end">
-                                        <span className="font-bold text-slate-900">Total</span>
-                                        <span className="text-2xl font-bold text-indigo-600">₹{finalPrice.toLocaleString()}</span>
-                                    </div>
-                                    <p className="text-xs text-slate-400 mt-1 text-center">Secure Payment via Razorpay</p>
+                                    <p className="text-xs text-slate-500 mt-2 italic">
+                                        *Payment will be collected after your application is reviewed and confirmed.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -168,11 +156,6 @@ export default function ApplyPage() {
                                     ))}
                                 </div>
                             </section>
-
-                            {/* Divider with visual connector */}
-                            {/* <div className="h-px bg-slate-100 relative">
-                                <div className="absolute left-0 -top-1.5 h-3 w-1 rounded-r-full bg-slate-200" />
-                            </div> */}
 
                             {/* Student Details */}
                             <section className="space-y-4">
@@ -256,14 +239,14 @@ export default function ApplyPage() {
                                 </div>
                             </section>
 
-                            {/* Referral Code */}
+                            {/* Referral Code (Now Friend's Group) */}
                             <section className="p-4 bg-indigo-50/50 rounded-xl border border-indigo-100">
                                 <div className="flex items-start gap-4">
                                     <Users2 className="h-5 w-5 text-indigo-600 mt-1" />
                                     <div className="flex-1 space-y-2">
                                         <label htmlFor="referralBy" className="text-sm font-bold text-slate-900 block">Applying with a Friend?</label>
                                         <p className="text-xs text-slate-500">
-                                            Enter your friend's name who referred you (or who you are joining with) to get an instant <strong>₹100 discount</strong>.
+                                            Enter your friend's name if you want to be in the same batch.
                                         </p>
                                         <input
                                             type="text"
@@ -286,16 +269,16 @@ export default function ApplyPage() {
                                     {isSubmitting ? (
                                         <>
                                             <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                                            Processing...
+                                            Submitting Application...
                                         </>
                                     ) : (
                                         <>
-                                            Proceed to Payment <ArrowRight className="ml-2 h-5 w-5" />
+                                            Submit Application <ArrowRight className="ml-2 h-5 w-5" />
                                         </>
                                     )}
                                 </Button>
                                 <p className="text-xs text-slate-400 text-center mt-4">
-                                    By clicking "Proceed", you agree to our Terms & Conditions and Privacy Policy.
+                                    By clicking "Submit", you agree to our Terms & Conditions and Privacy Policy.
                                 </p>
                             </div>
 
