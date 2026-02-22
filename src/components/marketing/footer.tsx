@@ -20,8 +20,8 @@ export function Footer() {
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
                         <div className="flex flex-col items-start gap-2 text-left">
-                            <Link href="/" className="-ml-12">
-                                <Logo height={90} width={360} className="drop-shadow-sm" />
+                            <Link href="/" className="group">
+                                <Logo height={44} className="drop-shadow-sm transition-transform group-hover:scale-105" />
                             </Link>
                             <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.2em] text-sky-600">
                                 A Scaleopal Initiative

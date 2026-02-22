@@ -15,8 +15,8 @@ export function Navbar() {
         <header className="fixed top-0 left-0 right-0 z-50">
             <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mt-4 flex h-16 items-center justify-between rounded-2xl border border-slate-100 bg-white/80 px-6 shadow-xl shadow-slate-200/50 backdrop-blur-xl">
-                    <Link href="/" className="flex items-center group -ml-10">
-                        <Logo height={80} width={320} />
+                    <Link href="/" className="flex items-center group">
+                        <Logo height={36} className="transition-transform group-hover:scale-110" />
                     </Link>
 
                     {/* Desktop Navigation */}

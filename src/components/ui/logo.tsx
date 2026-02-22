@@ -1,31 +1,21 @@
-import Image from "next/image";
-
 interface LogoProps {
     className?: string;
     height?: number;
-    width?: number;
 }
 
 /**
- * Basic Logo Component
- * Note: To fix sizing issues permanently, it is highly recommended to 
- * crop the source image file (logo.png) to remove all empty whitespace 
- * around the actual logo content.
+ * Logo Component using plain img for predictable sizing.
+ * The height prop directly controls the rendered height.
+ * Width adjusts automatically to maintain aspect ratio.
  */
-export function Logo({ className = "", height = 80, width = 320 }: LogoProps) {
+export function Logo({ className = "", height = 40 }: LogoProps) {
     return (
-        <div
-            className={`flex items-center justify-start ${className}`}
-            style={{ height, width }}
-        >
-            <Image
-                src="/logo.png"
-                alt="Scaleopal Labs Logo"
-                width={width}
-                height={height}
-                className="h-full w-auto object-contain"
-                priority
-            />
-        </div>
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+            src="/logo.png"
+            alt="Scaleopal Labs Logo"
+            style={{ height: `${height}px`, width: 'auto' }}
+            className={className}
+        />
     );
 }
